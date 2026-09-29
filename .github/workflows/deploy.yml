@@ -1,0 +1,44 @@
+name: Deploy React para GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v6
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Gerar build
+        run: npm run build
+        env:
+          REACT_APP_WHATSAPP: ${{ vars.REACT_APP_WHATSAPP }}
+
+      - name: Preparar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Fazer upload do build
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./build
+
+      - name: Publicar
+        uses: actions/deploy-pages@v4
