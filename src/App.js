@@ -19,7 +19,7 @@ function App() {
                 >WhatsApp</a></span>
               </div>
               <div className="sectionDiv">
-                <i className="bi bi-person-walking"></i><span className='spanText'><a target="_blank" rel="noopener noreferrer" className="link" href="https://otaviosilvadev.github.io/marketplace-runners/">Produtos de corrrida</a></span>
+                <i className="bi bi-person-walking"></i><span className='spanText'><a target="_blank" rel="noopener noreferrer" className="link" href="https://otaviosilvadev.github.io/marketplace-runners/">Produtos de corrida</a></span>
               </div>
               <div className="sectionDiv">
                 <i className="bi bi-facebook"></i><span className='spanText'><a target="_blank" rel="noopener noreferrer" className="link" href="https://www.facebook.com/aquarelapresentesepapelaria/?locale=pt_BR">Facebook</a></span>
